@@ -22,7 +22,7 @@ jobs:
       - name: Instalar dependências (se houver)
         run: |
           python -m pip install --upgrade pip
-          # pip install -r requirements.txt
+          pip install -r requirements.txt
 
       - name: Rodar todos os exercícios
-        run: python test_all.py
+        run: python test_all.py        
