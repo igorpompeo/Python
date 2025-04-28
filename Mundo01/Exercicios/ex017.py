@@ -1,0 +1,25 @@
+# Exerc�cio 17
+# Faça um programa que leia o comprimento do cateto oposto e do cateto adjacente de um triângulo retângulo, 
+# calcule e mostre o comprimento da hipotenusa.
+# Exemplo: Digite o comprimento do cateto oposto: 3.0. Digite o comprimento do cateto adjacente: 4.0.
+# A hipotenusa é: 5.0.
+# Importando a biblioteca math para usar a função sqrt
+import math, random
+# Lendo os comprimentos dos catetos do usuário
+print('Digite o comprimento do cateto oposto: ')
+cateto_oposto = random.random() * 10  # Gerando um número real aleatório entre 0 e 10
+print(f'Você digitou: {cateto_oposto:.2f}')
+# Lendo o comprimento do cateto adjacente
+print('Digite o comprimento do cateto adjacente: ')
+cateto_adjacente = random.random() * 10  # Gerando um número real aleatório entre 0 e 10
+# Exibindo o valor do cateto adjacente
+print(f'Você digitou:  {cateto_adjacente:.2f}')
+# Calculando o comprimento da hipotenusa usando o Teorema de Pitágoras
+hipotenusa = math.sqrt(cateto_oposto**2 + cateto_adjacente**2)
+# Exibindo o resultado
+print(f'A hipotenusa é: {hipotenusa:.2f}.')
+# Alternativa sem usar a biblioteca math
+# cateto_oposto = float(input('Digite o comprimento do cateto oposto: '))
+# cateto_adjacente = float(input('Digite o comprimento do cateto adjacente: '))
+# hipotenusa = (cateto_oposto**2 + cateto_adjacente**2)**0.5  # Calculando a hipotenusa manualmente
+# print(f'A hipotenusa é: {hipotenusa:.2f}.')
