@@ -1,29 +1,35 @@
-# Exerc�cio 21
-# Faça um programa em python que abra e reproduza um arquivo de áudio no formato mp3.
-# Exemplo: Reproduzindo o arquivo de áudio: musica.mp3.
-# Importando a biblioteca playsound para reproduzir arquivos de áudio
 import pygame
 import os
 
+# Detecta se está rodando no GitHub Actions
+modo_github = os.getenv('GITHUB_ACTIONS') == 'true'
 
-# Lendo o nome do arquivo de áudio do usuário
-print('Digite o nome do arquivo de áudio (com extensão .mp3/.wav): ')
-# Gerando um nome de arquivo aleatório
-arquivo = ('C:\\Users\\IgorPompeoTavaresSou\\Documents\\SCM\\Python\\Mundo01\\Desafios\\21\\rain.wav')  # Nome do arquivo de áudio
-# Exibindo o nome do arquivo
-print(f'Você digitou: {arquivo}')
-# Verificando se o arquivo existe
-if os.path.exists(arquivo):
-    pygame.init()  # Inicializando o pygame
-    # Reproduzindo o arquivo de áudio
-    print(f'Reproduzindo o arquivo de áudio: {arquivo}...')
-    # Inicializando o mixer do pygame
-    pygame.mixer.music.load(arquivo)
-    # Colocando para tocar o arquivo de áudio
-    pygame.mixer.music.play()
-    
-    while pygame.mixer.music.get_busy():  # Esperando o áudio terminar de tocar
-        continue
+# Descobre a pasta onde o script está
+caminho_script = os.path.dirname(os.path.abspath(__file__))
+
+# Pergunta o nome do arquivo de áudio
+nome_audio = 'rain.wav' if modo_github else input('Digite o nome do arquivo de áudio (com extensão .mp3/.wav): ').strip()
+
+# Tenta montar o caminho relativo à pasta do script
+caminho_arquivo = os.path.join(caminho_script, nome_audio)
+
+# Se não encontrar lá, tenta na pasta de execução atual
+if not os.path.exists(caminho_arquivo):
+    caminho_arquivo = nome_audio
+
+print(f'Procurando o arquivo: {caminho_arquivo}')
+
+if os.path.exists(caminho_arquivo):
+    if modo_github:
+        print(f'(Simulando reprodução de áudio: {caminho_arquivo})')
+    else:
+        pygame.init()
+        pygame.mixer.init()
+        print(f'Reproduzindo o arquivo de áudio: {caminho_arquivo}...')
+        pygame.mixer.music.load(caminho_arquivo)
+        pygame.mixer.music.play()
+        
+        while pygame.mixer.music.get_busy():
+            continue
 else:
-    # Exibindo mensagem de erro se o arquivo não existir
-    print(f'Erro: O arquivo {arquivo} não foi encontrado.')
+    print(f'Erro: O arquivo {caminho_arquivo} não foi encontrado.')
