@@ -2,10 +2,9 @@
 name: 🐍 Testar Exercícios Python
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  push: # todo push em qualquer branch
+  pull_request: # todo PR em qualquer branch
+  workflow_dispatch: # permite disparar manualmente pelo GitHub UI
 
 jobs:
   build-and-test:
