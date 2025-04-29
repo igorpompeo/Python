@@ -1,4 +1,4 @@
-# Exerc�cio 18
+# Exercício 18
 # Faça um programa que leia um ângulo qualquer e mostre na
 # tela o valor do seno, cosseno e tangente desse ângulo.
 # Exemplo: Digite o ângulo: 30. O ângulo de 30 tem o seno de 0.5,

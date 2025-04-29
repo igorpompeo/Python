@@ -1,4 +1,4 @@
-# Exerc�cio 16
+# Exercício 16
 # Crie um programa que leia um número Real qualquer
 # pelo teclado e mostre na tela a sua porção inteira.
 # Exemplo: Digite um número: 6.127.

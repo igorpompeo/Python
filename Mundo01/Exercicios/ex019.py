@@ -1,6 +1,6 @@
 import random
 
-# Exerc�cio 19
+# Exercício 19
 # Um professor quer sortear um dos seus quatro
 # alunos para apagar o quadro.
 # Faça um programa que ajude ele, lendo o nome dos
