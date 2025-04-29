@@ -1,6 +1,5 @@
 # 🚀 Meu Repositório de Estudos em Python
 
-![Python CI](https://github.com/igorpompeo/Python/actions/workflows/python-test.yml/badge.svg)
 ![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen)
 [![Coverage](https://img.shields.io/codecov/c/github/igorpompeo/Python)](https://codecov.io/gh/igorpompeo/Python)
 [![PyPI](https://img.shields.io/pypi/v/meu_pacote_python.svg)](https://pypi.org/project/meu_pacote_python/)
