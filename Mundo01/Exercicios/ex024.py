@@ -1,7 +1,8 @@
 from random import choice
 
 # Exercício 24
-# Crie um programa que leia o nome de uma cidade e diga se ela começa ou não com o nome "Santo".
+# Crie um programa que leia o nome de uma cidade
+# e diga se ela começa ou não com o nome "Santo".
 print("Digite o nome da cidade:")
 cidade = ["São Paulo", "Santo André", "Santos", "São José", "São Vicente"]
 cidade = choice(cidade)
