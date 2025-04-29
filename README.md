@@ -13,6 +13,10 @@ Este repositório contém minha prática dos exercícios do **Curso de Python 3 
 
 ```text
 .
+├── .github/
+│   └── workflows/
+│       ├── python-test.yml
+│   └── pull_request_template.md
 ├── Mundo01/
 │   └── Exercicios/
 │       ├── ex001.py
@@ -22,7 +26,10 @@ Este repositório contém minha prática dos exercícios do **Curso de Python 3 
 │       └── ...
 ├── menu.py       # Menu interativo para rodar os exercícios
 ├── test_all.py   # Script para executar todos os exercícios de uma vez
-└── README.md     # Este arquivo
+├── README.md     # Este arquivo
+├── .gitignore    # GitIgnore
+├── requirements.txt     # Requerimentos para funcionalidades
+└── setup.cfg     # Configurações
 ```
 
 ---
