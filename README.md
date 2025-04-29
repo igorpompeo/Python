@@ -2,6 +2,7 @@
 
 ![Python CI](https://github.com/igorpompeo/Python/actions/workflows/python-test.yml/badge.svg)
 ![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen)
+[![Coverage](https://img.shields.io/codecov/c/github/igorpompeo/Python)](https://codecov.io/gh/igorpompeo/Python)
 
 ---
 
@@ -105,3 +106,9 @@ Este repositório está sendo atualizado conforme avanço no curso. Fique à von
 ## 📚 Créditos
 
 Curso ministrado por [Gustavo Guanabara](https://github.com/gustavoguanabara) no portal [Curso em Vídeo](https://www.cursoemvideo.com/).
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob os termos da licença [MIT](LICENSE).
