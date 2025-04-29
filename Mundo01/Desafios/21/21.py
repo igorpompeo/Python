@@ -1,4 +1,4 @@
-# Exerc�cio 21
+# Exercício 21
 # Faça um programa em python que abra e reproduza
 # um arquivo de áudio no formato mp3.
 # Exemplo: Reproduzindo o arquivo de áudio: musica.mp3.

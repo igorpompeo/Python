@@ -1,2 +1,6 @@
 pygame
 flake8
+black
+isort
+pytest
+coverage
