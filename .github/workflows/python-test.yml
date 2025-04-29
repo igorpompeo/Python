@@ -24,5 +24,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Verificar estilo de código
+        run: |
+          flake8 Mundo01/Exercicios test_all.py
+
       - name: Rodar todos os exercícios
-        run: python test_all.py        
+        run: python test_all.py

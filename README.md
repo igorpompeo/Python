@@ -1,3 +1,7 @@
+# 🚀 Meu Repositório de Estudos em Python
+
+![CI Status](https://github.com/igorpompeo/Python/actions/workflows/python-test.yml/badge.svg)
+
 
 # 🐍 Exercícios de Python - Curso em Vídeo (Gustavo Guanabara)
 

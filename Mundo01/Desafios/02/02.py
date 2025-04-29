@@ -1,6 +1,11 @@
-# Crie um script Python que leia o dia o mês e o ano de 
-# nascimento de uma pessoa e mostre uma mensagem a data formatada
-dia = input('Dia: ')
-mes = input('Mês: ')
-ano = input('Ano: ')
-print('Você nasceu no dia', dia, 'de', mes, 'de', ano, '. Correto?')
+import random
+
+# Crie um script Python que leia o
+# dia o mês e o ano de
+# nascimento de uma pessoa e mostre
+# uma mensagem a data formatada
+
+dia = random.randint(1, 31)
+mes = random.randint(1, 12)
+ano = random.randint(1900, 2023)
+print(f"Você nasceu no dia {dia} de {mes} de {ano}. Correto?")

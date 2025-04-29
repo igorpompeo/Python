@@ -1,0 +1,29 @@
+repos:
+  # Hooks genéricos (trailing whitespace, fim de arquivo, etc.)
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0  # ajuste para a versão mais recente conforme o repositório
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+
+  # Flake8 para checar estilo PEP8
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.1.0
+    hooks:
+    - id: flake8
+
+  # isort para ordenar imports automaticamente
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black"]
+
+  # Black para formatar o código
+  - repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+      - id: black
+        language_version: python3

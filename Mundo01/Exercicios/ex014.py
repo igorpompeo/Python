@@ -3,8 +3,8 @@ import random
 # Título do programa
 print("=== Conversor de Temperatura: Celsius para Fahrenheit ===")
 
-# Gera um valor aleatório para simular a entrada do usuário
-celsius = random.random() * 45  # Gera um número aleatório entre 0 e 45 para simular a entrada
+# Gera um número aleatório entre 0 e 45 para simular a entrada
+celsius = random.random() * 45
 
 # Exibe a temperatura em Celsius
 print(f"\nA temperatura em Celsius é: {celsius:.2f}°C")
@@ -14,7 +14,7 @@ print("\nAgora, vamos fazer a conversão para Fahrenheit.")
 print("Fórmula para conversão: F = C * 9/5 + 32")
 
 # Realiza o cálculo de conversão
-fahrenheit = celsius * 9/5 + 32
+fahrenheit = celsius * 9 / 5 + 32
 
 # Exibe o resultado da conversão
 print(f"\nA temperatura em Fahrenheit é: {fahrenheit:.2f}°F")
@@ -28,5 +28,8 @@ print("\nAté a próxima!")
 print("Se precisar de mais alguma coisa, estarei por aqui!")
 
 # Dicas adicionais
-print("\nLembre-se: a temperatura em Fahrenheit é sempre maior que a temperatura em Celsius.")
+print(
+    "\nLembre-se: a temperatura em Fahrenheit é "
+    "sempre maior que a temperatura em Celsius."
+)
 print("Tenha um ótimo dia e não se esqueça de se manter hidratado!")

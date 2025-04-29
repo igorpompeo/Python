@@ -1,7 +1,10 @@
-import os, sys
+import os
+import sys
 
 dir_exercicios = os.path.join("Mundo01", "Exercicios")
-arquivos = sorted(f for f in os.listdir(dir_exercicios) if f.startswith("ex") and f.endswith(".py"))
+arquivos = sorted(
+    f for f in os.listdir(dir_exercicios) if f.startswith("ex") and f.endswith(".py")
+)
 
 print(f"Executando {len(arquivos)} exercícios...\n")
 

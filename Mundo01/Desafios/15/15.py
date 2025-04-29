@@ -1,16 +1,23 @@
 import random
-# Escreva um programa que pergunte a quantidade de Km percorridos por um carro alugado e a quantidade de dias pelos quais ele foi alugado. 
-# Calcule o preço a pagar, sabendo que o carro custa R$60 por dia e R$0,15 por Km rodado.
+
+# Escreva um programa que pergunte a quantidade de Km percorridos
+# por um carro alugado e a quantidade de dias pelos quais ele foi alugado.
+# Calcule o preço a pagar, sabendo que o carro custa
+# R$60 por dia e R$0,15 por Km rodado.
+
 print("=== Aluguel de Carro ===")
 
 # Solicita a quantidade de dias alugados
 print("Quantos dias o carro foi alugado? ")
-dias = random.randint(1, 30)  # Simulando a entrada do usuário com um número aleatório entre 1 e 30
+
+# Simulando a entrada do usuário com um número aleatório entre 1 e 30
+dias = random.randint(1, 30)
 print(f"Você alugou o carro por {dias} dias.\n")
 
 # Solicita a quantidade de Km percorridos
 print("Quantos Km foram percorridos? ")
-km = random.random() * 1000  # Simulando a entrada do usuário com um número aleatório entre 1 e 1000
+# Simulando a entrada do usuário com um número aleatório entre 1 e 1000
+km = random.random() * 1000
 print(f"Você percorreu {km:.2f} Km.\n")
 
 # Calcula o preço total

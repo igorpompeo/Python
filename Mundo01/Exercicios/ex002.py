@@ -1,2 +1,7 @@
-nome = input('Digite seu nome: ')
-print('É um prazer te conhecer, {}!'.format(nome))
+import random
+
+nomes = ["Lucas", "Ana", "Pedro", "Maria", "João"]
+
+print("Digite seu nome: ")
+
+print(f"É um prazer te conhecer, {random.choice(nomes)}!")
