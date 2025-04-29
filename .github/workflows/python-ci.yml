@@ -45,7 +45,10 @@ jobs:
       - name: Check isort
         run: isort --check-only Mundo01 test_all.py
 
-      - name: Executar testes
+      - name: Rodar testes com pytest
+        run: pytest
+
+      - name: Executar testes manuais
         run: python test_all.py
 
   # =============== DEPLOY TO PYPI ===============
