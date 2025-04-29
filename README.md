@@ -1,9 +1,11 @@
 # 🚀 Meu Repositório de Estudos em Python
 
-![CI Status](https://github.com/igorpompeo/Python/actions/workflows/python-test.yml/badge.svg)
+![Python CI](https://github.com/igorpompeo/Python/actions/workflows/python-test.yml/badge.svg)
+![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen)
 
+---
 
-# 🐍 Exercícios de Python - Curso em Vídeo (Gustavo Guanabara)
+## 🐍 Exercícios de Python - Curso em Vídeo (Gustavo Guanabara)
 
 Este repositório contém minha prática dos exercícios do **Curso de Python 3 - Mundo 01** do [Curso em Vídeo](https://www.cursoemvideo.com/curso/python-3-mundo-1/), com scripts organizados e um menu interativo para facilitar a execução.
 
@@ -15,21 +17,17 @@ Este repositório contém minha prática dos exercícios do **Curso de Python 3 
 .
 ├── .github/
 │   └── workflows/
-│       ├── python-test.yml
-│   └── pull_request_template.md
+│       ├── python-test.yml        # CI para testes e verificação do código
+│       └── python-ci.yml          # CI alternativo
 ├── Mundo01/
-│   └── Exercicios/
-│       ├── ex001.py
-│       ├── ex002.py
-│       ├── ex003.py
-│       ├── ex004.py
-│       └── ...
-├── menu.py       # Menu interativo para rodar os exercícios
-├── test_all.py   # Script para executar todos os exercícios de uma vez
-├── README.md     # Este arquivo
-├── .gitignore    # GitIgnore
-├── requirements.txt     # Requerimentos para funcionalidades
-└── setup.cfg     # Configurações
+│   ├── Exercicios/                # Exercícios corrigidos e validados
+│   └── Desafios/                  # Versões experimentais ou alternativas
+├── menu.py                        # Menu interativo para rodar exercícios
+├── test_all.py                    # Executa todos os exercícios
+├── requirements.txt               # Dependências do projeto
+├── setup.cfg                      # Configurações do Flake8 e outros linters
+├── .pre-commit-config.yaml        # Configurações do pre-commit
+└── README.md                      # Este arquivo
 ```
 
 ---
@@ -37,34 +35,63 @@ Este repositório contém minha prática dos exercícios do **Curso de Python 3 
 ## ▶️ Como Executar
 
 ### 🔹 Requisitos:
-- Python 3 instalado no sistema
+- Python 3 instalado
 
 ### 🔹 Passos:
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/igorpompeo/Python.git
-   cd Python
-   ```
+```bash
+git clone https://github.com/igorpompeo/Python.git
+cd Python
+python menu.py
+```
 
-2. Execute o menu interativo:
-   ```bash
-   python menu.py
-   ```
+Digite o número do exercício desejado (sem o prefixo `ex`):
 
-3. Digite o número do exercício que deseja rodar (sem o prefixo `ex`):
-   ```
-   Digite o número do exercício (ex: 001), ou 'sair': 004
-   ```
+```
+Digite o número do exercício (ex: 001), ou 'sair': 004
+```
 
 ---
 
-## 🧪 Testar Todos os Exercícios
+## ✅ Testar Todos os Exercícios
 
-Para rodar todos os exercícios automaticamente e verificar se estão funcionando corretamente:
+Para rodar todos os exercícios automaticamente:
 
 ```bash
 python test_all.py
+```
+
+---
+
+## ⚙️ DevOps com GitHub Actions
+
+Este projeto conta com CI configurado:
+
+- ✅ Lint com **flake8**
+- ✅ Formatação com **black**
+- ✅ Ordenação de imports com **isort**
+- ✅ Pre-commit hooks
+- ✅ Execução automática de todos os scripts com `test_all.py`
+
+O workflow é executado em todos os `push`, `pull_request` e pode ser executado manualmente.
+
+---
+
+## 🧼 Pre-commit Hooks
+
+O repositório usa [pre-commit](https://pre-commit.com) para garantir qualidade no código.
+
+### Para instalar os hooks localmente:
+
+```bash
+pip install pre-commit
+pre-commit install
+```
+
+### Para rodar manualmente:
+
+```bash
+pre-commit run --all-files
 ```
 
 ---
