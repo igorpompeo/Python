@@ -4,7 +4,7 @@ setup(
     name="meu_pacote_python",  # 🔁 troque pelo nome único no PyPI
     version="0.1.0",
     author="Igor Pompeo",
-    author_email="seu-email@example.com",
+    author_email="pompbass@gmail.com",
     description="Exercícios de Python - Curso em Vídeo",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
