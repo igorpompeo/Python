@@ -1,14 +1,15 @@
 # menu.py
+import importlib
 import os
 
-while True:
-    escolha = input("Digite o número do exercício (ex: 001), ou 'sair': ")
-    if escolha == "sair":
-        break
+# Caminho para o arquivo do módulo
+caminho = "Mundo01/Exercicios/ex001.py"
 
-    caminho = os.path.join("Mundo01", "Exercicios", f"ex{escolha}.py")
-
-    if os.path.exists(caminho):
-        exec(open(caminho, encoding="utf-8").read())
-    else:
-        print("Arquivo não encontrado.")
+# Verifica se o arquivo existe
+if os.path.exists(caminho):
+    # Em vez de usar exec(), use importlib para carregar o módulo
+    nome_modulo = caminho.replace(".py", "").replace("/", ".")
+    modulo = importlib.import_module(nome_modulo)
+    # Agora você pode usar as funções ou variáveis do módulo importado
+else:
+    print(f"Arquivo {caminho} não encontrado.")

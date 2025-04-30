@@ -1,2 +1,4 @@
 def test_soma_basica():
-    assert 1 + 1 == 2
+    resultado = 1 + 1
+    if resultado != 2:
+        raise ValueError(f"Erro: esperado 2, mas obteve {resultado}")
