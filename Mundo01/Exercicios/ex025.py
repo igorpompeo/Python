@@ -10,7 +10,7 @@ def ex025():
     nome = ["Ana Maria da Silva", "João da Silva", "Maria Clara", "Pedro Paulo"]
 
     # Escolhe um nome aleatório da lista
-    nome = choice(nome)
+    nome = choice(nome)  # nosec
 
     # Exibe o nome escolhido
     print("Nome digitado:", nome)

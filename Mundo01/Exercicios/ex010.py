@@ -9,7 +9,7 @@ def ex010():
     print("=== Conversor de Reais para Dólares ===")
 
     # Gera um número aleatório de 1 a 100
-    n = random.uniform(1, 100)
+    n = random.uniform(1, 100)  # nosec
 
     # # Faz os cálculos direto no print:
     # dolar = n / 3.27

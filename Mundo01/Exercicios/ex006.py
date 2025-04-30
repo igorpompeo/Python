@@ -7,7 +7,7 @@ def ex006():
     print("=== Desafio 06 ===")
 
     # Gera um número aleatório de 1 a 100
-    n = random.randint(1, 100)
+    n = random.randint(1, 100)  # nosec
 
     # Faz os cálculos direto no print:
     # - Dobro: n*2

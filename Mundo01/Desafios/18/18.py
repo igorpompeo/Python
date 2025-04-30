@@ -12,7 +12,7 @@ import random
 print("Digite o ângulo: ")
 
 # Gerando um ângulo aleatório entre 0 e 360 graus
-angulo = random.randint(0, 360)
+angulo = random.randint(0, 360)  # nosec
 
 # Exibindo o ângulo gerado
 print(f"Você digitou: {angulo} graus")

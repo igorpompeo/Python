@@ -13,7 +13,7 @@ def ex016():
     print("Digite um número: ")
 
     # Gerando um número real aleatório entre 0 e 100
-    num = random.random() * 100
+    num = random.random() * 100  # nosec
 
     # Usando a função floor para
     # obter a parte inteira do número

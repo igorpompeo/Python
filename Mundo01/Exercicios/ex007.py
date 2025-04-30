@@ -7,7 +7,7 @@ def ex007():
     print("Média de notas")
 
     # Gera um número aleatório de 1 a 100
-    n1, n2 = random.uniform(1, 10), random.uniform(1, 10)
+    n1, n2 = random.uniform(1, 10), random.uniform(1, 10)  # nosec
 
     # Faz os cálculos direto no print:
     # - Média: (n1+n2)/2

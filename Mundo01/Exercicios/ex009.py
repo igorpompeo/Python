@@ -7,7 +7,7 @@ def ex009():
     print("Tabuada")
 
     # Gera um número aleatório de 1 a 100
-    n = random.randint(1, 100)
+    n = random.randint(1, 100)  # nosec
     print("-" * 20)
     print(f"A tabuada de {n} é:")
 

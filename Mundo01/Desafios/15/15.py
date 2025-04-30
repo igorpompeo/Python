@@ -11,13 +11,13 @@ print("=== Aluguel de Carro ===")
 print("Quantos dias o carro foi alugado? ")
 
 # Simulando a entrada do usuário com um número aleatório entre 1 e 30
-dias = random.randint(1, 30)
+dias = random.randint(1, 30)  # nosec
 print(f"Você alugou o carro por {dias} dias.\n")
 
 # Solicita a quantidade de Km percorridos
 print("Quantos Km foram percorridos? ")
 # Simulando a entrada do usuário com um número aleatório entre 1 e 1000
-km = random.random() * 1000
+km = random.random() * 1000  # nosec
 print(f"Você percorreu {km:.2f} Km.\n")
 
 # Calcula o preço total

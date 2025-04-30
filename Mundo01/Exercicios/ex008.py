@@ -6,7 +6,7 @@ def ex008():
     print("=== Desafio 08 ===")
     print("Conversor de medidas")
     # Gera um número aleatório de 1 a 10
-    n = random.uniform(1, 10)
+    n = random.uniform(1, 10)  # nosec
 
     km = n / 1000
     hm = n / 100

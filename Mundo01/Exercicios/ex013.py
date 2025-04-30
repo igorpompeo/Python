@@ -7,7 +7,7 @@ def ex013():
     print("=== Aumento de 15% ===")
 
     # Gera um número aleatório de 1 a 100
-    salario = random.uniform(1, 1000)
+    salario = random.uniform(1, 1000)  # nosec
     print(f"Salário inicial: R$ {salario:.2f}")
 
     aumento = salario * 0.15

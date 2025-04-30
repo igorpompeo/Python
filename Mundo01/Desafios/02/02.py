@@ -5,7 +5,7 @@ import random
 # nascimento de uma pessoa e mostre
 # uma mensagem a data formatada
 
-dia = random.randint(1, 31)
-mes = random.randint(1, 12)
-ano = random.randint(1900, 2023)
+dia = random.randint(1, 31)  # nosec
+mes = random.randint(1, 12)  # nosec
+ano = random.randint(1900, 2023)  # nosec
 print(f"Você nasceu no dia {dia} de {mes} de {ano}. Correto?")

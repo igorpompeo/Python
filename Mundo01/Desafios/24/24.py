@@ -5,7 +5,7 @@ from random import choice
 # e diga se ela começa ou não com o nome "Santo".
 print("Digite o nome da cidade:")
 cidade = ["São Paulo", "Santo André", "Santos", "São José", "São Vicente"]
-cidade = choice(cidade)
+cidade = choice(cidade)  # nosec
 print("Cidade digitada:", cidade)
 if cidade[:5].upper() == "SANTO":
     print("A cidade começa com 'Santo'.")

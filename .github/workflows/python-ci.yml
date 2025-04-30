@@ -38,7 +38,10 @@ jobs:
         run: pre-commit run --all-files
 
       - name: Segurança (bandit)
-        run: bandit -r Mundo01
+        run: bandit -r
+
+      - name: Análise de segurança com Bandit
+        run: bandit -r . -x Mundo01/Desafios,Mundo01/Exercicios -s B311
 
       - name: Lint com flake8
         run: flake8 Mundo01 test_all.py

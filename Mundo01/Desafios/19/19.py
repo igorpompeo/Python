@@ -26,7 +26,7 @@ print("Escolhendo um aluno aleatoriamente...")
 alunos = [aluno1, aluno2, aluno3, aluno4]
 
 # Escolhendo um aluno aleatoriamente
-escolhido = random.choice(alunos)
+escolhido = random.choice(alunos)  # nosec
 
 # Exibindo o nome do aluno escolhido
 print(f"O aluno escolhido foi: {escolhido}.")

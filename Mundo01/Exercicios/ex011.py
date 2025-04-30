@@ -9,7 +9,7 @@ def ex011():
     print("=== Pintura de Parede ===")
 
     # Gera um número aleatório de 1 a 100
-    largura, altura = random.uniform(1, 100), random.uniform(1, 100)
+    largura, altura = random.uniform(1, 100), random.uniform(1, 100)  # nosec
 
     # Faz os cálculos direto no print:
     # area = largura * altura

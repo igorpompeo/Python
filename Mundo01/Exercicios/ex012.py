@@ -8,7 +8,7 @@ def ex012():
     print("=== Desconto de 5% ===")
 
     # Gera um número aleatório de 1 a 100
-    preco = random.uniform(1, 100)
+    preco = random.uniform(1, 100)  # nosec
 
     desconto = preco * 0.05
     preco_final = preco - desconto

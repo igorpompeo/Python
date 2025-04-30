@@ -14,13 +14,13 @@ import random
 print("Digite o comprimento do cateto oposto: ")
 
 # Gerando um número real aleatório entre 0 e 10
-cateto_oposto = random.random() * 10
+cateto_oposto = random.random() * 10  # nosec
 print(f"Você digitou: {cateto_oposto:.2f}")
 
 # Lendo o comprimento do cateto adjacente
 print("Digite o comprimento do cateto adjacente: ")
 # Gerando um número real aleatório entre 0 e 10
-cateto_adjacente = random.random() * 10
+cateto_adjacente = random.random() * 10  # nosec
 
 # Exibindo o valor do cateto adjacente
 print(f"Você digitou:  {cateto_adjacente:.2f}")

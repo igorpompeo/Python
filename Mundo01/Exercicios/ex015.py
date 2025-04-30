@@ -12,7 +12,7 @@ def ex015():
 
     # Simulando a entrada do usuário com
     # um número aleatório entre 1 e 30
-    dias = random.randint(1, 30)
+    dias = random.randint(1, 30)  # nosec
 
     print(f"Você alugou o carro por {dias} dias.\n")
 
@@ -21,7 +21,7 @@ def ex015():
 
     # Simulando a entrada do usuário com
     # um número aleatório entre 1 e 1000
-    km = random.random() * 1000
+    km = random.random() * 1000  # nosec
 
     print(f"Você percorreu {km:.2f} Km.\n")
 

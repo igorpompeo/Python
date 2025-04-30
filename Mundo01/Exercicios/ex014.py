@@ -5,7 +5,7 @@ def ex014():
     print("=== Conversor de Temperatura: Celsius para Fahrenheit ===")
 
     # Gera um número aleatório entre 0 e 45 para simular a entrada
-    celsius = random.random() * 45
+    celsius = random.random() * 45  # nosec
 
     # Exibe a temperatura em Celsius
     print(f"\nA temperatura em Celsius é: {celsius:.2f}°C")
