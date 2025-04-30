@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="meu_pacote_python",  # 🔁 troque pelo nome único no PyPI
-    version="0.3.3",
+    version="0.3.4",
     author="Igor Pompeo",
     author_email="pompbass@gmail.com",
     description="Exercícios de Python - Curso em Vídeo",
