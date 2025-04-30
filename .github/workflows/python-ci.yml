@@ -32,9 +32,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pre-commit
+          pip install bandit
 
       - name: Rodar pre-commit
         run: pre-commit run --all-files
+
+      - name: Segurança (bandit)
+        run: bandit -r Mundo01
 
       - name: Lint com flake8
         run: flake8 Mundo01 test_all.py
@@ -50,6 +54,12 @@ jobs:
 
       - name: Rodar testes com cobertura
         run: pytest --cov=Mundo01 --cov-report=term-missing --cov-fail-under=80
+
+      - name: Enviar cobertura para Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
 
       - name: Executar testes manuais
         run: python test_all.py

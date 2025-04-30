@@ -1,7 +1,8 @@
 # 🚀 Meu Repositório de Estudos em Python
 
 ![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen)
-[![Coverage](https://img.shields.io/codecov/c/github/igorpompeo/Python)](https://codecov.io/gh/igorpompeo/Python)
+[![CI](https://github.com/igorpompeo/Python/actions/workflows/python-ci.yml/badge.svg)](https://github.com/igorpompeo/Python/actions/workflows/python-ci.yml)
+[![Coverage](https://img.shields.io/codecov/c/github/igorpompeo/Python)](https://app.codecov.io/gh/igorpompeo/Python)
 [![PyPI](https://img.shields.io/pypi/v/meu_pacote_python.svg)](https://pypi.org/project/meu_pacote_python/)
 
 ---
@@ -17,9 +18,12 @@ Este repositório contém minha prática dos exercícios do **Curso de Python 3 
 ```text
 .
 ├── .github/
-│   └── workflows/
-│       ├── python-test.yml        # CI para testes e verificação do código
-│       └── python-ci.yml          # CI alternativo
+│   ├── workflows/
+│   │   ├── python-ci.yml          # CI/CD completo com testes e deploy
+│   │   └── release-drafter.yml    # Geração automática de changelog
+│   └── release-drafter.yml        # Configuração do Release Drafter
+├── tests/
+│   └── test_dummy.py              # Teste de placeholder
 ├── Mundo01/
 │   ├── Exercicios/                # Exercícios corrigidos e validados
 │   └── Desafios/                  # Versões experimentais ou alternativas
@@ -64,15 +68,26 @@ python test_all.py
 
 ---
 
+## 🧪 Cobertura de Testes
+
+Para verificar a cobertura dos exercícios:
+
+```bash
+pytest --cov=Mundo01 --cov-report=term-missing --cov-fail-under=80
+```
+
+---
+
 ## ⚙️ DevOps com GitHub Actions
 
 Este projeto conta com CI configurado:
 
-- ✅ Lint com **flake8**
-- ✅ Formatação com **black**
-- ✅ Ordenação de imports com **isort**
-- ✅ Pre-commit hooks
-- ✅ Execução automática de todos os scripts com `test_all.py`
+- ✅ Testes com **pytest**
+- ✅ Análise de segurança com **bandit**
+- ✅ Cobertura de testes com **codecov**
+- ✅ Publicação automática no **PyPI**
+- ✅ Geração de changelog com **Release Drafter**
+- ✅ Pre-commit hooks com formatação e lint
 
 O workflow é executado em todos os `push`, `pull_request` e pode ser executado manualmente.
 
@@ -87,6 +102,7 @@ O repositório usa [pre-commit](https://pre-commit.com) para garantir qualidade 
 ```bash
 pip install pre-commit
 pre-commit install
+pre-commit run --all-files
 ```
 
 ### Para rodar manualmente:
