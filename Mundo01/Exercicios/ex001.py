@@ -1,1 +1,2 @@
-print("Olá, Mundo!")
+def ex001():
+    print("Olá, Mundo!")

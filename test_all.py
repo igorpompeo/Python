@@ -1,22 +1,23 @@
+import importlib
 import os
+
+import pytest
+
+dir_exercicios = os.path.join("Mundo01", "Exercicios")
 
 
 def test_exercicios_rodam_sem_erros():
-    dir_exercicios = os.path.join("Mundo01", "Exercicios")
     arquivos = sorted(
         f
         for f in os.listdir(dir_exercicios)
         if f.startswith("ex") and f.endswith(".py")
     )
-
-    erros = []
     for arquivo in arquivos:
-        caminho = os.path.join(dir_exercicios, arquivo)
-        print(f"==> Rodando {arquivo}")
-        try:
-            exec(open(caminho, encoding="utf-8").read())
-        except Exception as e:
-            erros.append(f"{arquivo}: {e}")
-        print("-" * 40)
+        modulo = f"Mundo01.Exercicios.{arquivo[:-3]}"
+        exercicio = importlib.import_module(modulo)
 
-    assert not erros, "❌ Erros encontrados:\n" + "\n".join(erros)
+        func = getattr(exercicio, arquivo[:-3], None)
+        if callable(func):
+            func()  # chama ex001(), ex002(), etc.
+        else:
+            pytest.fail(f"Função {arquivo[:-3]} não encontrada em {arquivo}")

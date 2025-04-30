@@ -48,6 +48,9 @@ jobs:
       - name: Rodar testes com pytest
         run: pytest
 
+      - name: Rodar testes com cobertura
+        run: pytest --cov=Mundo01 --cov-report=term-missing --cov-fail-under=80
+
       - name: Executar testes manuais
         run: python test_all.py
 
