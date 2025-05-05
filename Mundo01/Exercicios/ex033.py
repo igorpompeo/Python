@@ -58,7 +58,9 @@ def ex033():
 
         if len(set(numeros)) == 1:
             print(
-                Fore.GREEN + emojize("✅ Todos os números são iguais!") + Style.RESET_ALL
+                Fore.GREEN
+                + emojize("✅ Todos os números são iguais!")
+                + Style.RESET_ALL
             )
         else:
             maior = max(numeros)

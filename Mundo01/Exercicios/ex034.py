@@ -73,7 +73,9 @@ def ex034():
         + Style.RESET_ALL
     )
     print(
-        Fore.YELLOW + emojize(f"💰 Novo salário: R${novo_salario:.2f}") + Style.RESET_ALL
+        Fore.YELLOW
+        + emojize(f"💰 Novo salário: R${novo_salario:.2f}")
+        + Style.RESET_ALL
     )
     separador()
     print(Fore.YELLOW + emojize("👋 Até a próxima!") + Style.RESET_ALL)
