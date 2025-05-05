@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 [tool.black]
 exclude = '''
 /(
-    Mundo01/Desafios/34/34.py
-    Mundo01/Exercicios/ex033.py
-    Mundo01/Exercicios/ex034.py
+    /home/runner/work/Python/Python/Mundo01/Desafios/34/34.py
+    /home/runner/work/Python/Python/Mundo01/Exercicios/ex033.py
+    /home/runner/work/Python/Python/Mundo01/Exercicios/ex034.py
 )/
 '''
