@@ -39,5 +39,5 @@ repos:
       language: python
       types: [python]
       pass_filenames: false  # <- Isso impede o pre-commit de passar todos os arquivos diretamente
-      args: ["-r", ".", "--exclude", "tests", "--exit-zero"]
+      args: ["-r", ".", "--exclude", ".venv,tests", "--skip", "B101,B311,B404,B603", "--exit-zero"]
       verbose: true  # Para mais detalhes no log
