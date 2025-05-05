@@ -1,5 +1,6 @@
 def ex028():
-    from os import system
+    import os
+    import platform
     from random import randint
     from time import sleep
 
@@ -28,10 +29,16 @@ def ex028():
                 except ValueError:
                     print(Fore.RED + "Entrada inválida." + Style.RESET_ALL)
 
+    def limpar_tela():
+        if platform.system() == "Windows":
+            os.system("cls")  # nosec B605 B607
+        else:
+            os.system("clear")  # nosec B605 B607
+
     # Ative ou desative modo automático aqui:
     modo_automatico = True
 
-    system("cls")
+    limpar_tela()
     n = randint(0, 5)  # nosec
 
     separador()

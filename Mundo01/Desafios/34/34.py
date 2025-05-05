@@ -16,9 +16,7 @@ def separador():
 
 def obter_modo(auto=False):
     if auto:
-        return round(
-            random() * 4000, 2
-        )  # Simulando um salário aleatório entre 0 e 4000
+        return round(random() * 4000, 2)  # nosec B311
     else:
         while True:
             try:
