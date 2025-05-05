@@ -14,7 +14,7 @@ def obter_modo(auto=False):
     else:
         while True:
             try:
-                return int(input("\U0001F697 Digite a velocidade do carro: "))  # nosec
+                return int(input("\U0001f697 Digite a velocidade do carro: "))  # nosec
             except ValueError:
                 print("❌ Entrada inválida. Tente novamente.")
                 return randint(60, 120)  # nosec
@@ -24,9 +24,9 @@ modo_automatico = True  # Ative ou desative modo automático aqui
 
 
 def verificar_multa(velocidade):
-    print(f"\U0001F697 A velocidade do carro é {velocidade}Km/h")
+    print(f"\U0001f697 A velocidade do carro é {velocidade}Km/h")
     if velocidade > 80:
-        print("\U0001F3CE" + Fore.RED + " Você foi multado!" + Style.RESET_ALL)
+        print("\U0001f3ce" + Fore.RED + " Você foi multado!" + Style.RESET_ALL)
         multa = (velocidade - 80) * 7
         print(Fore.RED + f"O valor da multa é R${multa:.2f}" + Style.RESET_ALL)
     else:

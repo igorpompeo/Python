@@ -38,7 +38,7 @@ jobs:
         run: pre-commit run --all-files
 
       - name: Segurança (bandit)
-        run: bandit -r Mundo01
+        run: bandit -r . --exclude tests -s
 
       - name: Análise de segurança com Bandit
         run: bandit -r . -x Mundo01/Desafios,Mundo01/Exercicios -s B311
