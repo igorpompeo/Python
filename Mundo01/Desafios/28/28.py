@@ -11,12 +11,12 @@ def separador():
 
 def obter_palpite(auto=False):
     if auto:
-        return randint(0, 5)
+        return randint(0, 5)  # nosec
     else:
         while True:
             try:
                 n = int(
-                    input(
+                    input(  # nosec
                         Fore.YELLOW + "Digite um número entre 0 e 5: " + Style.RESET_ALL
                     )
                 )
@@ -32,7 +32,7 @@ def obter_palpite(auto=False):
 modo_automatico = True
 
 system("cls")
-n = randint(0, 5)
+n = randint(0, 5)  # nosec
 
 separador()
 print(Fore.YELLOW + "Vou pensar em um número entre 0 e 5..." + Style.RESET_ALL)

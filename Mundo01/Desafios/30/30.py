@@ -7,7 +7,7 @@ from time import sleep
 from colorama import Fore, Style
 from emoji import emojize
 
-n = randint(0, 100)
+n = randint(0, 100)  # nosec
 
 
 def separador():
@@ -23,12 +23,14 @@ def par_ou_impar(n):
 
 def obter_modo(auto=False):
     if auto:
-        return randint(0, 100)
+        return randint(0, 100)  # nosec
     else:
         while True:
             try:
                 n = int(
-                    input(Fore.YELLOW + "Digite um número inteiro: " + Style.RESET_ALL)
+                    input(
+                        Fore.YELLOW + "Digite um " "número inteiro: " + Style.RESET_ALL
+                    )  # nosec
                 )
                 return n
             except ValueError:

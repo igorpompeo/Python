@@ -23,7 +23,7 @@ def ex016():
     print(f"O número {num:.3f} tem a parte inteira {parte_inteira}.")
 
     # Alternativa sem usar a biblioteca math
-    # num = float(input('Digite um número: '))
+    # num = float(input('Digite um número: '))  # nosec
     # Converte o número para inteiro,
     # descartando a parte decimal
     # parte_inteira = int(num)

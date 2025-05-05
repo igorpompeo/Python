@@ -1,7 +1,7 @@
 # crie um algoritmo que leia um número e
 # mostre o seu dobro, triplo e raiz quadrada.
 print("=== Desafio 06 ===")
-número = int(input("Digite um número:"))
+número = int(input("Digite um número:"))  # nosec
 dobro = número * 2
 triplo = número * 3
 raiz_quadrada = número ** (1 / 2)

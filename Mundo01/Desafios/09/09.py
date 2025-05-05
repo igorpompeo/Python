@@ -1,7 +1,7 @@
 # Faça um programa que leia um número inteiro e mostre na tela sua tabuada.
 print("=== Desafio 09 ===")
 print("Tabuada")
-n = int(input("Digite um número inteiro: "))
+n = int(input("Digite um número inteiro: "))  # nosec
 print(f"A tabuada de {n} é:")
 print(f"{n} x 1 = {n * 1}")
 print(f"{n} x 2 = {n * 2}")

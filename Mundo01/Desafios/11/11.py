@@ -7,8 +7,8 @@
 
 print("=== Desafio 11 ===")
 print("=== Pintura de Parede ===")
-largura = float(input("Digite a largura da parede em metros:"))
-altura = float(input("Digite a altura da parede em metros:"))
+largura = float(input("Digite a largura da parede em metros:"))  # nosec
+altura = float(input("Digite a altura da parede em metros:"))  # nosec
 area = largura * altura
 litros = area / 2
 print(

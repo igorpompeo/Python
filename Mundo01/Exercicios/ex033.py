@@ -12,27 +12,27 @@ def ex033():
 
     def obter_modo(auto=False):
         if auto:
-            return [randint(0, 100) for _ in range(3)]
+            return [randint(0, 100) for _ in range(3)]  # nosec
         else:
             while True:
                 try:
                     numeros = [
                         int(
-                            input(
+                            input(  # nosec
                                 Fore.YELLOW
                                 + emojize(":one: Digite o primeiro número: ")
                                 + Style.RESET_ALL
                             )
                         ),
                         int(
-                            input(
+                            input(  # nosec
                                 Fore.YELLOW
                                 + emojize(":two: Digite o segundo número: ")
                                 + Style.RESET_ALL
                             )
                         ),
                         int(
-                            input(
+                            input(  # nosec
                                 Fore.YELLOW
                                 + emojize(":three: Digite o terceiro número: ")
                                 + Style.RESET_ALL

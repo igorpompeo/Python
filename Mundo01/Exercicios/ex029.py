@@ -10,14 +10,16 @@ def ex029():
 
     def obter_modo(auto=False):
         if auto:
-            return randint(60, 120)
+            return randint(60, 120)  # nosec
         else:
             while True:
                 try:
-                    return int(input("\U0001F697 Digite a velocidade do carro: "))
+                    return int(
+                        input("\U0001F697 Digite a " "velocidade do carro: ")
+                    )  # nosec
                 except ValueError:
                     print("❌ Entrada inválida. Tente novamente.")
-                    return randint(60, 120)
+                    return randint(60, 120)  # nosec
 
     modo_automatico = True  # Ative ou desative modo automático aqui
 

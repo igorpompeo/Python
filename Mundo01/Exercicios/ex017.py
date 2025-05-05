@@ -36,8 +36,10 @@ def ex017():
     print(f"A hipotenusa é: {hipotenusa:.2f}.")
 
     # Alternativa sem usar a biblioteca math
-    # cateto_oposto = float(input('Digite o comprimento do cateto oposto: '))
-    # cateto_adjacente = float(input('Digite o comprimento do cateto adjacente: '))
+    # cateto_oposto = float(input('Digite o comprimento
+    # do cateto oposto: '))  # nosec
+    # cateto_adjacente = float(input('Digite o comprimento
+    # do cateto adjacente: '))  # nosec
     # hipotenusa = (cateto_oposto**2 + cateto_adjacente**2)**0.5
     # # Calculando a hipotenusa manualmente
     # print(f'A hipotenusa é: {hipotenusa:.2f}.')

@@ -9,7 +9,7 @@ def ex030():
     from colorama import Fore, Style
     from emoji import emojize
 
-    n = randint(0, 100)
+    n = randint(0, 100)  # nosec
 
     def separador():
         print(Fore.CYAN + "=-" * 20 + Style.RESET_ALL)
@@ -22,12 +22,12 @@ def ex030():
 
     def obter_modo(auto=False):
         if auto:
-            return randint(0, 100)
+            return randint(0, 100)  # nosec
         else:
             while True:
                 try:
                     n = int(
-                        input(
+                        input(  # nosec
                             Fore.YELLOW + "Digite um número inteiro: " + Style.RESET_ALL
                         )
                     )

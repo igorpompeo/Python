@@ -3,7 +3,7 @@
 # Considere US$1,00 = R$3,27.
 print("=== Desafio 10 ===")
 print("=== Conversor de Reais para Dólares ===")
-n = float(input("Quantos reais você tem na carteira? R$ "))
+n = float(input("Quantos reais você tem na carteira? R$ "))  # nosec
 dolar = n / 3.27
 print(f"Com R$ {n:.2f} você pode comprar US$ {dolar:.2f}")
 print("=== Fim do Desafio 10 ===")

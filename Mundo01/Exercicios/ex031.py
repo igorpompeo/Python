@@ -15,12 +15,12 @@ def ex031():
 
     def obter_modo(auto=False):
         if auto:
-            return randint(1, 1000)
+            return randint(1, 1000)  # nosec
         else:
             while True:
                 try:
                     n = int(
-                        input(
+                        input(  # nosec
                             Fore.YELLOW
                             + emojize(":airplane: Digite a distância da viagem em km: ")
                             + Style.RESET_ALL

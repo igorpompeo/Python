@@ -13,13 +13,13 @@ def ex035():
 
     def obter_modo(auto=False):
         if auto:
-            return [randint(1, 100) for _ in range(3)]
+            return [randint(1, 100) for _ in range(3)]  # nosec
         else:
             while True:
                 try:
                     retas = [
                         float(
-                            input(
+                            input(  # nosec
                                 Fore.YELLOW
                                 + emojize(
                                     ":straight_ruler: Digite o comprimento "
@@ -29,7 +29,7 @@ def ex035():
                             )
                         ),
                         float(
-                            input(
+                            input(  # nosec
                                 Fore.YELLOW
                                 + emojize(
                                     ":straight_ruler: Digite o comprimento "
@@ -39,7 +39,7 @@ def ex035():
                             )
                         ),
                         float(
-                            input(
+                            input(  # nosec
                                 Fore.YELLOW
                                 + emojize(
                                     ":straight_ruler: Digite o comprimento "

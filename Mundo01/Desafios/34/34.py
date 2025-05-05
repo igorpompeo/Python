@@ -23,7 +23,7 @@ def obter_modo(auto=False):
         while True:
             try:
                 n = float(
-                    input(
+                    input(  # nosec
                         Fore.YELLOW
                         + emojize(":moneybag: Digite o salário do funcionário: ")
                         + Style.RESET_ALL

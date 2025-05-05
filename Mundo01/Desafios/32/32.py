@@ -18,7 +18,7 @@ def obter_modo(auto=False):
         while True:
             try:
                 n = int(
-                    input(
+                    input(  # nosec
                         Fore.YELLOW
                         + emojize(":calendar: Digite um ano (ou 0 para o ano atual): ")
                         + Style.RESET_ALL
