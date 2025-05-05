@@ -47,7 +47,7 @@ jobs:
         run: flake8 Mundo01 test_all.py
 
       - name: Check Black
-        run: black --check Mundo01 test_all.py
+        run: black --check .
 
       - name: Check isort
         run: isort --check-only Mundo01 test_all.py
