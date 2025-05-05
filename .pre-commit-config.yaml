@@ -29,3 +29,13 @@ repos:
     hooks:
       - id: black
         language_version: python3
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.6  # ou a versão mais recente
+    hooks:
+    - id: bandit
+      name: bandit - security linter
+      entry: bandit
+      language: python
+      types: [python]
+      args: ["-r", ".", "--exclude", "tests"]
