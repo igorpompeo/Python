@@ -15,7 +15,7 @@ def ex029():
             while True:
                 try:
                     return int(
-                        input("\U0001F697 Digite a " "velocidade do carro: ")
+                        input("\U0001F697 Digite a velocidade do carro: ")
                     )  # nosec
                 except ValueError:
                     print("❌ Entrada inválida. Tente novamente.")

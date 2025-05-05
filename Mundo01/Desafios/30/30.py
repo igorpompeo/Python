@@ -29,7 +29,7 @@ def obter_modo(auto=False):
             try:
                 n = int(
                     input(
-                        Fore.YELLOW + "Digite um " "número inteiro: " + Style.RESET_ALL
+                        Fore.YELLOW + "Digite um número inteiro: " + Style.RESET_ALL
                     )  # nosec
                 )
                 return n
