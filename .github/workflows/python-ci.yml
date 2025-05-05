@@ -2,7 +2,7 @@ name: Python CI/CD
 
 on:
   push:
-    branches: ["main", "master", "feature/**"]
+    branches: ["main", "master", "feature/**", "bugfix/**"]
     # matching tags like v1.2.3
     tags: ["v*.*.*"]
   pull_request:
