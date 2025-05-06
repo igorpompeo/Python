@@ -3,8 +3,6 @@ from setuptools import find_packages, setup
 setup(
     name="meu_pacote_python",  # 🔁 troque pelo nome único no PyPI
     version="1.0.8",
-    license="MIT",
-    license_files=["LICENSE"],
     author="Igor Pompeo",
     author_email="pompbass@gmail.com",
     description="Exercícios de Python - Curso em Vídeo",
@@ -13,9 +11,9 @@ setup(
     url="https://github.com/igorpompeo/Python",
     packages=find_packages(include=["Mundo01", "Mundo01.*"]),
     include_package_data=True,
+    license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.8",

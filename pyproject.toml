@@ -10,4 +10,14 @@ exclude = '''
 )/
 '''
 [project]
-license = {text = "MIT"}
+name = "meu_pacote_python"
+version = "1.0.8"  # OBRIGATÓRIO
+description = "Meus exercícios de python com DevOps"
+authors = [{name = "Igor Pompeo", email = "pompbass@gmail.com"}]
+license = {text = "MIT"}  # Nova sintaxe SPDX
+readme = "README.md"
+requires-python = ">=3.8"
+dynamic = ["version"]
+dependencies = [
+    "requests>=2.25.0",
+]
