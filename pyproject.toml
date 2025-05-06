@@ -1,6 +1,7 @@
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
 [tool.black]
 exclude = '''
 /(
@@ -9,15 +10,24 @@ exclude = '''
     /home/runner/work/Python/Python/Mundo01/Exercicios/ex034.py
 )/
 '''
+
 [project]
 name = "meu_pacote_python"
 version = "1.0.8"  # OBRIGATÓRIO
-description = "Meus exercícios de python com DevOps"
-authors = [{name = "Igor Pompeo", email = "pompbass@gmail.com"}]
-license = {text = "MIT"}  # Nova sintaxe SPDX
+authors = [
+    {name = "Igor Pompeo", email = "pompbass@gmail.com"},
+]
+description = "Exercícios de Python - Curso em Vídeo"
 readme = "README.md"
 requires-python = ">=3.8"
-dynamic = ["version"]
+license = {text = "MIT"}  # Nova sintaxe SPDX
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
 dependencies = [
     "requests>=2.25.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/igorpompeo/Python"
