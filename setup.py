@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="meu_pacote_python",  # 🔁 troque pelo nome único no PyPI
-    version="1.0.2",
+    version="1.0.3",
     author="Igor Pompeo",
     author_email="pompbass@gmail.com",
     description="Exercícios de Python - Curso em Vídeo",
@@ -17,4 +17,22 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.8",
+    install_requires=[
+        "colorama>=0.4.0",
+        "emoji>=2.0.0",
+    ],
+    extras_require={
+        "games": ["pygame>=2.0.0"],
+        "dev": [
+            "flake8",
+            "black",
+            "pytest",
+            "coverage",
+        ],
+    },
+    entry_points={
+        "console_scripts": [
+            "meupacote=meu_modulo:main",  # Se quiser criar um CLI
+        ],
+    },
 )
