@@ -84,7 +84,7 @@ jobs:
           ls -la dist/
           twine check dist/*  # Verifica metadados antes do deploy
 
-      # --- VERIFICAÇÃO EXTRA ---
+      # --- VERIFICACAO EXTRA ---
       - name: Validate deploy conditions
         run: |
           echo "✅ Branch/tag válido para deploy: ${{ github.ref }}"
@@ -93,6 +93,14 @@ jobs:
           github.ref == 'refs/heads/master' ||
           startsWith(github.ref, 'refs/tags/v')
       # ----------------------------------------
+
+      # --- ADICIONE AQUI A VERIFICAÇÃO DE ENCODING ---
+      - name: Check README encoding (UTF-8)
+        run: |
+          echo "Verificando codificação do README.md..."
+          file -i README.md  # Mostra o encoding do arquivo
+          iconv -f utf-8 -t utf-8 README.md > /dev/null || (echo "❌ README.md não está em UTF-8 válido"; exit 1)
+          echo "✅ README.md é UTF-8 válido"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -108,13 +116,13 @@ jobs:
           skip-existing: true
 
       - name: Publish to PyPI  # PASSO 3 - Produção
-        if: startsWith(github.ref, 'refs/tags/v')  # Só em tags
+        if: startsWith(github.ref, 'refs/tags/v')  # So em tags
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_TOKEN }}
           skip-existing: true
 
-      - name: Notify team  # PASSO 3 - Notificação (opcional)
+      - name: Notify team  # PASSO 3 - Notificacao (opcional)
         if: success()
         uses: actions/github-script@v6
         with:

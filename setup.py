@@ -5,7 +5,7 @@ setup(
     version="1.0.8",
     author="Igor Pompeo",
     author_email="pompbass@gmail.com",
-    description="Exercícios de Python - Curso em Vídeo",
+    description="Exercicios de Python - Curso em Video",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/igorpompeo/Python",
