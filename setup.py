@@ -36,3 +36,9 @@ setup(
         ],
     },
 )
+
+try:
+    with open("README.md", "r", encoding="utf-8") as f:
+        long_description = f.read()
+except UnicodeDecodeError as e:
+    raise SystemExit(f"Erro de encoding no README.md: {e}. Corrija para UTF-8.")

@@ -65,6 +65,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install build twine
 
+      # --- ADICIONE AQUI A VERIFICAÇÃO DE ENCODING ---
+      - name: Check README encoding (UTF-8)
+        run: |
+          echo "Verificando codificação do README.md..."
+          file -i README.md  # Mostra o encoding do arquivo
+          iconv -f utf-8 -t utf-8 README.md > /dev/null || (echo "❌ README.md não está em UTF-8 válido"; exit 1)
+          echo "✅ README.md é UTF-8 válido"
+
+      - name: Check for invalid UTF-8 characters
+        run: |
+            echo "Verificando arquivos para caracteres UTF-8 inválidos..."
+            find . -type f -name "*.md" -o -name "*.py" -o -name "*.txt" | while read file; do
+              if ! iconv -f utf-8 -t utf-8 "$file" >/dev/null 2>&1; then
+                echo "❌ Erro: $file contém caracteres não-UTF-8"
+                exit 1
+              fi
+            done
+            echo "✅ Todos os arquivos são UTF-8 válidos"
+
       - name: Build package
         run: python -m build
 
@@ -93,14 +112,6 @@ jobs:
           github.ref == 'refs/heads/master' ||
           startsWith(github.ref, 'refs/tags/v')
       # ----------------------------------------
-
-      # --- ADICIONE AQUI A VERIFICAÇÃO DE ENCODING ---
-      - name: Check README encoding (UTF-8)
-        run: |
-          echo "Verificando codificação do README.md..."
-          file -i README.md  # Mostra o encoding do arquivo
-          iconv -f utf-8 -t utf-8 README.md > /dev/null || (echo "❌ README.md não está em UTF-8 válido"; exit 1)
-          echo "✅ README.md é UTF-8 válido"
 
       - name: Set up Python
         uses: actions/setup-python@v5
