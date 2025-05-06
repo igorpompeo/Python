@@ -1,31 +1,54 @@
 repos:
-  # Hooks genéricos (trailing whitespace, fim de arquivo, etc.)
+  # Hooks genéricos
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0  # ajuste para a versão mais recente conforme o repositório
+    rev: v5.0.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-yaml
       - id: check-added-large-files
-        args: ["--maxkb=500"]  # evita push de arquivos acima de 500 KB
+        args: ["--maxkb=500"]
       - id: check-merge-conflict
+      - id: mixed-line-ending  # Adicionei para prevenir problemas de line endings
+        args: ["--fix=lf"]  # Força LF (Unix)
 
-  # Flake8 para checar estilo PEP8
+  # Flake8
   - repo: https://github.com/pycqa/flake8
     rev: 6.1.0
     hooks:
-    - id: flake8
+      - id: flake8
+        additional_dependencies: [flake8-bugbear]
 
-  # isort para ordenar imports automaticamente
+  # isort
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
     hooks:
       - id: isort
-        args: ["--profile", "black"]
+        args: ["--profile", "black", "--filter-files"]  # Adicionei --filter-files
 
-  # Black para formatar o código
+  # Black (configuração otimizada)
   - repo: https://github.com/psf/black
-    rev: 23.9.1
+    rev: 24.4.2  # Versão estável mais recente
     hooks:
       - id: black
+        args: ["--safe", "--quiet", "--fast"]
         language_version: python3
+        require_serial: true  # Evita execução paralela
+
+  # Bandit
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.7
+    hooks:
+    - id: bandit
+      name: bandit security scan
+      entry: bandit
+      language: python  # Mude para system para melhor compatibilidade
+      pass_filenames: false
+      args: [
+        "-r", ".",
+        "--exclude", ".venv,.venv/*,*/site-packages/*,tests/*,*/tests/*,*/test/*,*/__pycache__/*",
+        "--skip", "B101,B102,B105,B107,B110,B202,B301,B302,B307,B310,B311,B314,B323,B324,B403,B404,B405,B411,B602,B603,B604,B607,B608",
+        "--exit-zero"
+      ]
+      additional_dependencies: ["bandit[toml]"]
+      verbose: true

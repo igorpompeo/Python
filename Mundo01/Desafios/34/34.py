@@ -49,13 +49,17 @@ def calcular_aumento(salario):
 
 
 separador()
-print(Fore.YELLOW + emojize("💼 Vamos calcular o aumento do salário!") + Style.RESET_ALL)
+print(
+    Fore.YELLOW + emojize("💼 Vamos calcular o aumento do salário!") + Style.RESET_ALL
+)
 separador()
 modo = True
 salario = obter_modo(auto=modo)
 
 print(
-    Fore.YELLOW + emojize(f"🔍 O salário informado é R${salario:.2f}!") + Style.RESET_ALL
+    Fore.YELLOW
+    + emojize(f"🔍 O salário informado é R${salario:.2f}!")
+    + Style.RESET_ALL
 )
 separador()
 

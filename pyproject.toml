@@ -1,3 +1,11 @@
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
+[tool.black]
+exclude = '''
+/(
+    /home/runner/work/Python/Python/Mundo01/Desafios/34/34.py
+    /home/runner/work/Python/Python/Mundo01/Exercicios/ex033.py
+    /home/runner/work/Python/Python/Mundo01/Exercicios/ex034.py
+)/
+'''

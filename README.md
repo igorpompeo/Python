@@ -4,12 +4,20 @@
 [![CI](https://github.com/igorpompeo/Python/actions/workflows/python-ci.yml/badge.svg)](https://github.com/igorpompeo/Python/actions/workflows/python-ci.yml)
 [![Coverage](https://img.shields.io/codecov/c/github/igorpompeo/Python)](https://app.codecov.io/gh/igorpompeo/Python)
 [![PyPI](https://img.shields.io/pypi/v/meu_pacote_python.svg)](https://pypi.org/project/meu_pacote_python/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
 ## 🐍 Exercícios de Python - Curso em Vídeo (Gustavo Guanabara)
 
 Este repositório contém minha prática dos exercícios do **Curso de Python 3 - Mundo 01** do [Curso em Vídeo](https://www.cursoemvideo.com/curso/python-3-mundo-1/), com scripts organizados e um menu interativo para facilitar a execução.
+
+---
+
+## 📦 Instalação
+```bash
+pip install meu_pacote_python
+```
 
 ---
 
@@ -33,6 +41,16 @@ Este repositório contém minha prática dos exercícios do **Curso de Python 3 
 ├── setup.cfg                      # Configurações do Flake8 e outros linters
 ├── .pre-commit-config.yaml        # Configurações do pre-commit
 └── README.md                      # Este arquivo
+```
+
+---
+
+
+## 💻 Uso como Pacote
+Após instalar, você pode importar os exercícios diretamente:
+```python
+from meu_pacote_python.Mundo01.Exercicios import ex001
+ex001.ex001()  # Executa o exercício 1
 ```
 
 ---
@@ -90,6 +108,15 @@ Este projeto conta com CI configurado:
 - ✅ Pre-commit hooks com formatação e lint
 
 O workflow é executado em todos os `push`, `pull_request` e pode ser executado manualmente.
+
+---
+
+## 🤝 Como Contribuir
+1. Faça um fork do projeto
+2. Crie uma branch (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona novo exercício'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
 
 ---
 

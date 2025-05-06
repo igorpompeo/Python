@@ -5,3 +5,5 @@ isort
 pytest
 coverage
 pytest-cov
+colorama
+emoji
