@@ -43,10 +43,10 @@ jobs:
     environment:
       name: pypi
       url: https://pypi.org/project/meu-pacote-python/
-    if: >-
-      github.ref == 'refs/heads/main' ||
+    if: >
+      (github.ref == 'refs/heads/main' ||
       github.ref == 'refs/heads/master' ||
-      startsWith(github.ref, 'refs/tags/v')
+      startsWith(github.ref, 'refs/tags/v'))
     permissions:
       contents: read
       packages: write
