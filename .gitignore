@@ -8,3 +8,4 @@ build/
 *.egg-info/
 __pycache__/
 .pytest_cache/
+publicar.ps1
