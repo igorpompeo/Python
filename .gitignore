@@ -6,3 +6,5 @@ atualiza-versao-setup.py
 dist/
 build/
 *.egg-info/
+__pycache__/
+.pytest_cache/
