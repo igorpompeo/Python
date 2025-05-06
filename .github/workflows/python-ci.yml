@@ -2,11 +2,10 @@ name: Python CI/CD
 
 on:
   push:
-    branches: ["main", "master"]
+    branches: ["main", "master", "feature/*", "bugfix/*"]
     tags: ["v*.*.*"]
   pull_request:
     branches: ["main", "master"]
-  workflow_dispatch:
 
 jobs:
   build:
@@ -15,10 +14,11 @@ jobs:
       matrix:
         python-version: ["3.10", "3.11", "3.12"]
 
+    # ETAPA DE BUILD E TESTES (para TODAS as branches)
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -27,19 +27,25 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pre-commit bandit pytest-cov twine
+          pip install -r requirements.txt pre-commit bandit pytest-cov twine
 
-      - name: Verify package metadata  # PASSO 1 - Verificação
-        run: twine check dist/*  # Verifica metadados antes do build
+      - name: Run tests and checks
+        run: |
+          python -m build
+          twine check dist/*  # Verifica metadados antes do build
+          pytest --cov=Munod01 --cov-report=term-missing
 
+  # ETAPA DE DEPLOY (APENAS para tags e main/master)
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: pypi
       url: https://pypi.org/project/meu-pacote-python/
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: |
+      startsWith(github.ref, 'refs/tags/v') ||
+      github.ref == 'refs/heads/main' ||
+      github.ref == 'refs/heads/master'
     permissions:
       contents: read
       packages: write
@@ -48,20 +54,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # --- VERIFICAÇÃO EXTRA ---
+      - name: Validate deploy conditions
+        run: |
+          if [[ "${{ github.ref }}" != "refs/heads/main" &&
+                "${{ github.ref }}" != "refs/heads/master" &&
+                ! startsWith(github.ref, 'refs/tags/v') ]]; then
+            echo "❌ Deploy bloqueado para branch/tag: ${{ github.ref }}"
+            exit 1
+          fi
+          echo "✅ Branch/tag válido para deploy: ${{ github.ref }}"
+      # ----------------------------------------
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip build twine
-
-      - name: Build package
-        run: python -m build
-
-      - name: Verify package # PASSO 1 (reforçado)
-        run: twine check dist/*
 
       - name: Publish to TestPyPI  # PASSO 2 - Teste primeiro
         if: github.ref != 'refs/tags/v*'  # Executa apenas em branches
@@ -89,3 +97,8 @@ jobs:
               repo: context.repo.repo,
               body: '🚀 Versão ${process.env.GITHUB_REF_NAME} publicada!'
             })
+
+      - name: Notify feature/bugfix branch
+        if: contains(github.ref, 'feature/') || contains(github.ref, 'bugfix/')
+        run: |
+          echo "✅ Testes passaram na branch ${{ github.ref }}"
