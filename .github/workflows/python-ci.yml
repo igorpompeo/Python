@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
@@ -45,18 +45,22 @@ jobs:
       packages: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Build package
+      - name: Install dependencies
         run: |
-          python -m pip install build
-          python -m build
+          python -m pip install --upgrade pip build twine
 
-      - name: Verify package integrity  # PASSO 1 (reforçado)
+      - name: Build package
+        run: python -m build
+
+      - name: Verify package # PASSO 1 (reforçado)
         run: twine check dist/*
 
       - name: Publish to TestPyPI  # PASSO 2 - Teste primeiro
