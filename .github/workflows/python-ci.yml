@@ -68,6 +68,17 @@ jobs:
       - name: Build package
         run: python -m build
 
+      - name: Validate metadata
+        run: |
+          python -c "
+          from importlib.metadata import PathDistribution
+          from pathlib import Path
+          for dist_file in Path('dist').glob('*.whl'):
+              print(f'Validando {dist_file.name}')
+              PathDistribution(dist_file).metadata
+          print('✅ Metadados válidos')
+          "
+
       - name: Verify files
         run: |
           ls -la dist/

@@ -9,3 +9,5 @@ exclude = '''
     /home/runner/work/Python/Python/Mundo01/Exercicios/ex034.py
 )/
 '''
+[project]
+license = {text = "MIT"}

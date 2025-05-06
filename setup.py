@@ -3,6 +3,8 @@ from setuptools import find_packages, setup
 setup(
     name="meu_pacote_python",  # 🔁 troque pelo nome único no PyPI
     version="1.0.8",
+    license="MIT",
+    license_files=["LICENSE"],
     author="Igor Pompeo",
     author_email="pompbass@gmail.com",
     description="Exercícios de Python - Curso em Vídeo",
