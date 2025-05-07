@@ -20,7 +20,7 @@ authors = [
 description = "Exercicios de Python - Curso em Video"
 readme = {file = "README.md", content-type = "text/markdown", encoding = "utf-8"}
 requires-python = ">=3.8"
-license = {text = "MIT"}  # Formato moderno
+license = "MIT"  # Formato SPDX padrão
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
