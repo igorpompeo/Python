@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          cache: 'pip'
+          #cache: 'pip'
 
       - name: Install dependencies
         run: |
@@ -90,8 +90,6 @@ jobs:
           sed -i 's/license-expression.*//' pyproject.toml
           sed -i 's/license-file.*//' pyproject.toml
           echo -e '\nlicense = "MIT"' >> pyproject.toml
-
-          # Remove builds anteriores
           rm -rf dist/ build/ *.egg-info/
 
       - name: Sanitize files (UTF-8)
