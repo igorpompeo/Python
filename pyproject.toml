@@ -16,7 +16,7 @@ exclude = '''
 
 [project]
 name = "meu_pacote_python"
-version = "1.0.8"  # OBRIGATÓRIO
+version = "1.0.9"  # OBRIGATÓRIO
 authors = [
     {name = "Igor Pompeo", email = "pompbass@gmail.com"},
 ]
