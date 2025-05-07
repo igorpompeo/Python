@@ -3,7 +3,7 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-license-files = []
+license-files = [LICENSE]
 
 [tool.black]
 exclude = '''
@@ -21,7 +21,6 @@ authors = [
     {name = "Igor Pompeo", email = "pompbass@gmail.com"},
 ]
 description = "Exercicios de Python - Curso em Video"
-license = {file = "LICENSE"}
 readme = {file = "README.md", content-type = "text/markdown", encoding = "utf-8"}
 requires-python = ">=3.8"
 classifiers = [
