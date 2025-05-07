@@ -30,7 +30,6 @@ dependencies = [
     "emoji>=2.0.0",
     "requests>=2.25.0"
 ]
-dynamic = ["scripts", "optional-dependencies"]
 
 [project.optional-dependencies]
 games = ["pygame>=2.0.0"]
