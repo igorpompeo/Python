@@ -128,7 +128,7 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           repository-url: https://test.pypi.org/legacy/
-          password: ${{ secrets.TEST_PYPI_TOKEN }}
+          password: ${{ secrets.PYPI_TOKEN_TEST }}
           skip-existing: true
 
       - name: Publish to PyPI  # PASSO 3 - Produção
