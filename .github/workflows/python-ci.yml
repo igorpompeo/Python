@@ -84,6 +84,16 @@ jobs:
             done
             echo "✅ Todos os arquivos são UTF-8 válidos"
 
+      - name: Sanitize metadata
+        run: |
+          # Garante que o pyproject.toml está correto
+          sed -i 's/license-expression.*//' pyproject.toml
+          sed -i 's/license-file.*//' pyproject.toml
+          echo -e '\nlicense = "MIT"' >> pyproject.toml
+
+          # Remove builds anteriores
+          rm -rf dist/ build/ *.egg-info/
+
       - name: Sanitize files (UTF-8)
         run: |
           find . -type f -name "*.py" -o -name "*.md" -o -name "*.txt" | while read file; do
@@ -91,7 +101,9 @@ jobs:
           done
 
       - name: Build package
-        run: python -m build
+        run: |
+          python -m build
+          unzip -p dist/*.whl */METADATA | grep License:
 
       - name: Verify files
         run: |
