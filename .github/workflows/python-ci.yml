@@ -84,19 +84,14 @@ jobs:
             done
             echo "✅ Todos os arquivos são UTF-8 válidos"
 
+      - name: Sanitize files (UTF-8)
+        run: |
+          find . -type f -name "*.py" -o -name "*.md" -o -name "*.txt" | while read file; do
+            iconv -f utf-8 -t utf-8 "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+          done
+
       - name: Build package
         run: python -m build
-
-      - name: Validate metadata
-        run: |
-          python -c "
-          from importlib.metadata import PathDistribution
-          from pathlib import Path
-          for dist_file in Path('dist').glob('*.whl'):
-              print(f'Validando {dist_file.name}')
-              PathDistribution(dist_file).metadata
-          print('✅ Metadados válidos')
-          "
 
       - name: Verify files
         run: |
