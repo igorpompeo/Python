@@ -20,7 +20,7 @@ authors = [
 description = "Exercicios de Python - Curso em Video"
 readme = {file = "README.md", content-type = "text/markdown", encoding = "utf-8"}
 requires-python = ">=3.8"
-license = {text = "MIT"}  # Nova sintaxe SPDX
+license = "MIT"  # Nova sintaxe SPDX
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
@@ -28,6 +28,7 @@ classifiers = [
 dependencies = [
     "requests>=2.25.0",
 ]
+dynamic = ["scripts", "optional-dependencies"]
 
 [project.urls]
 Homepage = "https://github.com/igorpompeo/Python"

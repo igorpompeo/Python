@@ -11,6 +11,8 @@ repos:
       - id: check-merge-conflict
       - id: mixed-line-ending  # Adicionei para prevenir problemas de line endings
         args: ["--fix=lf"]  # Força LF (Unix)
+      - id: check-merge-conflict
+      - id: check-byte-order-marker
 
   # Flake8
   - repo: https://github.com/pycqa/flake8
