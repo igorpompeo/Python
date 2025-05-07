@@ -14,11 +14,6 @@ setup(
     url="https://github.com/igorpompeo/Python",
     packages=find_packages(include=["Mundo01", "Mundo01.*"]),
     include_package_data=True,
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",  # Mantenha por compatibilidade
-        "Operating System :: OS Independent",
-    ],
     python_requires=">=3.8",
     install_requires=[
         "colorama>=0.4.0",
