@@ -34,7 +34,7 @@ jobs:
         run: |
           python -m build
           twine check dist/*  # Verifica metadados antes do build
-          pytest --cov=Munod01 --cov-report=term-missing
+          pytest --cov=Mundo01 --cov-report=term-missing
 
   # ETAPA DE DEPLOY (APENAS para tags e main/master)
   deploy:

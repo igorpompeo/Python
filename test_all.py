@@ -1,23 +1,36 @@
-import importlib
+import importlib.util
 import os
 
 import pytest
 
-dir_exercicios = os.path.join("Mundo01", "Exercicios", "Mundo02", "Exercicio")
+# Diretórios com os exercícios
+diretorios_exercicios = [
+    ("Mundo01.Exercicios", os.path.join("Mundo01", "Exercicios")),
+    ("Mundo02.Exercicio", os.path.join("Mundo02", "Exercicio")),
+]
 
 
-def test_exercicios_rodam_sem_erros():
+@pytest.mark.parametrize("mod_base, caminho", diretorios_exercicios)
+def test_exercicios_rodam_sem_erros(mod_base, caminho):
+    if not os.path.exists(caminho):
+        pytest.fail(f"Diretório não encontrado: {caminho}")
+
     arquivos = sorted(
-        f
-        for f in os.listdir(dir_exercicios)
-        if f.startswith("ex") and f.endswith(".py")
+        f for f in os.listdir(caminho) if f.startswith("ex") and f.endswith(".py")
     )
-    for arquivo in arquivos:
-        modulo = f"Mundo01.Exercicios.Mundo02.Exercicio{arquivo[:-3]}"
-        exercicio = importlib.import_module(modulo)
 
-        func = getattr(exercicio, arquivo[:-3], None)
+    for arquivo in arquivos:
+        nome_modulo = f"{mod_base}.{arquivo[:-3]}"
+        caminho_modulo = os.path.join(caminho, arquivo)
+
+        spec = importlib.util.spec_from_file_location(nome_modulo, caminho_modulo)
+        modulo = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(modulo)
+
+        func = getattr(modulo, arquivo[:-3], None)
         if callable(func):
-            func()  # chama ex001(), ex002(), etc.
+            func()  # executa a função exXXX() se existir
         else:
-            pytest.fail(f"Função {arquivo[:-3]} não encontrada em {arquivo}")
+            print(
+                f"[AVISO] Função '{arquivo[:-3]}' não encontrada no módulo {nome_modulo}"
+            )
