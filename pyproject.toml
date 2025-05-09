@@ -14,6 +14,11 @@ exclude = '''
 )/
 '''
 
+[tool.flake8]
+max-line-length = 100
+exclude = ["venv/", "__pycache__"]
+ignore = ["E203", "W503"]
+
 [project]
 name = "meu_pacote_python"
 version = "1.0.9"  # OBRIGATÓRIO
