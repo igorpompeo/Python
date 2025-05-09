@@ -2,35 +2,18 @@
 requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools]
-license-files = ["LICENSE.txt"]
-
-[tool.black]
-exclude = '''
-/(
-    /home/runner/work/Python/Python/Mundo01/Desafios/34/34.py
-    /home/runner/work/Python/Python/Mundo01/Exercicios/ex033.py
-    /home/runner/work/Python/Python/Mundo01/Exercicios/ex034.py
-)/
-'''
-
-[tool.flake8]
-max-line-length = 100
-exclude = ["venv/", "__pycache__"]
-ignore = ["E203", "W503"]
-
 [project]
 name = "meu_pacote_python"
-version = "1.0.9"  # OBRIGATÓRIO
+version = "1.0.9"
 authors = [
     {name = "Igor Pompeo", email = "pompbass@gmail.com"},
 ]
-description = "Exercicios de Python - Curso em Video"
-readme = {file = "README.md", content-type = "text/markdown", encoding = "utf-8"}
+description = "Exercícios de Python - Curso em Vídeo"
+readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.8"
+license = {file = "LICENSE.txt"}  # ✅ CORRETO para evitar depreciação
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 dependencies = [
@@ -45,3 +28,16 @@ dev = ["flake8", "black", "pytest", "coverage"]
 
 [project.urls]
 Homepage = "https://github.com/igorpompeo/Python"
+
+[tool.setuptools.packages.find]
+include = ["Mundo01*", "Mundo02*"]
+
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    /home/runner/work/Python/Python/Mundo01/Desafios/34/34.py
+    | /home/runner/work/Python/Python/Mundo01/Exercicios/ex033.py
+    | /home/runner/work/Python/Python/Mundo01/Exercicios/ex034.py
+)/
+'''

@@ -32,9 +32,8 @@ pip install meu_pacote_python
 │   └── release-drafter.yml        # Configuração do Release Drafter
 ├── tests/
 │   └── test_dummy.py              # Teste de placeholder
-├── Mundo01/
-│   ├── Exercicios/                # Exercícios corrigidos e validados
-│   └── Desafios/                  # Versões experimentais ou alternativas
+│   ├── Mundo01/
+│   └── Mundo02/
 ├── menu.py                        # Menu interativo para rodar exercícios
 ├── test_all.py                    # Executa todos os exercícios
 ├── requirements.txt               # Dependências do projeto
